@@ -32,7 +32,7 @@ public class ProxyServiceTest {
     @InjectMocks
     private ProxyService proxyService;
 
-    // ✅ Test 1 — Cache HIT → ne doit pas appeler le serveur origin
+    //  Test 1  Cache HIT → ne doit pas appeler le serveur origin
     @Test
     void shouldReturnCachedResponse_whenCacheHit() {
         // Given
@@ -55,7 +55,7 @@ public class ProxyServiceTest {
         verify(restTemplate, never()).exchange(any(), any(), any(), eq(byte[].class));
     }
 
-    // ✅ Test 2 — Cache MISS → doit appeler le serveur origin et sauvegarder
+    //  Test 2  Cache MISS → doit appeler le serveur origin et sauvegarder
     @Test
     void shouldForwardRequest_whenCacheMiss() {
         // Given
@@ -84,7 +84,7 @@ public class ProxyServiceTest {
         verify(cacheManager, times(1)).save(eq(cacheKey), any(CachedResponse.class));
     }
 
-    // ✅ Test 3 — POST → ne doit jamais utiliser le cache
+    //  Test 3  POST → ne doit jamais utiliser le cache
     @Test
     void shouldNotUseCache_whenMethodIsPost() {
         // Given
@@ -111,7 +111,7 @@ public class ProxyServiceTest {
         verify(cacheManager, never()).save(any(), any());
     }
 
-    // ✅ Test 4 — Réponse 4xx → ne doit pas sauvegarder dans le cache
+    //  Test 4  Réponse 4xx → ne doit pas sauvegarder dans le cache
     @Test
     void shouldNotCache_whenResponseIsNotSuccessful() {
         // Given
