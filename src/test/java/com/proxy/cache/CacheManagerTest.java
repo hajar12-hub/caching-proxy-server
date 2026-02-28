@@ -1,4 +1,4 @@
-package cache;
+package com.proxy.cache;
 
 import com.proxy.cache.CacheManager;
 import com.proxy.model.CachedResponse;
