@@ -87,7 +87,7 @@ caching-proxy-server/
 ```
 
 <!-- SCREENSHOT: Terminal showing server started -->
-
+![img.png](img.png)
 
 ---
 
@@ -101,7 +101,7 @@ GET http://localhost:8080/products
 ```
 
 <!-- SCREENSHOT: Postman showing X-Cache: MISS in response headers -->
-![img.png](img.png)
+
 
 ```
 X-Cache: MISS
