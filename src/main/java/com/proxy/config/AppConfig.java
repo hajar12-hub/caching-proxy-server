@@ -12,5 +12,4 @@ import org.springframework.stereotype.Component;
 public class AppConfig{
     private String originUrl;
     private int port;
-
 }
